@@ -24,7 +24,8 @@ body {
   }
   a {
     text-decoration:none;
-    color:${Theme.colors.font}
+    color:${Theme.colors.font};
+    cursor: pointer;
   }
   ul {
     list-style:none;

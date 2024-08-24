@@ -52,7 +52,7 @@ const Pagination = styled.div`
   span {
     display: inline-block;
     width: 7px;
-    height: 7 px;
+    height: 7px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
 

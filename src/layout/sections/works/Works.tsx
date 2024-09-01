@@ -18,7 +18,11 @@ export const Works = () => {
 
         <TabMenu menuItems={worksItems} />
 
-        <FlexWrapper justify={"space-between"} align={"flex-start"}>
+        <FlexWrapper
+          justify={"space-between"}
+          align={"flex-start"}
+          wrap={"wrap"}
+        >
           <Work
             src={socialImg}
             title={"Social Network"}
@@ -39,4 +43,8 @@ export const Works = () => {
   );
 };
 
-const StyledWorks = styled.section``;
+const StyledWorks = styled.section`
+  ${FlexWrapper} {
+    gap: 30px;
+  }
+`;

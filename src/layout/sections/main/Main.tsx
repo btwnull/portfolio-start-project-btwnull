@@ -4,11 +4,12 @@ import photo from "../../../assets/images/photo.jpg";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { Theme } from "../../../styles/Theme";
+import { font } from "../../../styles/Common";
 export const Main = () => {
   return (
     <StyledMain>
       <Container>
-        <FlexWrapper align={"center"} justify={"space-between"}>
+        <FlexWrapper align={"center"} justify={"space-around"} wrap={"wrap"}>
           <div>
             <SmallText>Hi There</SmallText>
             <Name>
@@ -34,6 +35,8 @@ const StyledMain = styled.section`
 const PhotoWrapper = styled.div`
   position: relative;
   z-index: 0;
+  margin-top: 65px;
+
   &::before {
     content: "";
     width: 360px;
@@ -44,6 +47,13 @@ const PhotoWrapper = styled.div`
     top: -24px;
     left: 24px;
     z-index: -1;
+
+    @media ${Theme.media.mobile} {
+      width: 314px;
+      height: 414px;
+      top: -17px;
+      left: 20px;
+    }
   }
 `;
 
@@ -51,23 +61,38 @@ const Photo = styled.img`
   width: 350px;
   height: 430px;
   object-fit: cover;
+  margin-right: 20px;
+
+  @media ${Theme.media.mobile} {
+    width: 310px;
+    height: 380px;
+  }
 `;
 
 const MainTitle = styled.h1`
-  font-weight: 400px;
-  font-size: 27px;
+  /* font-weight: 400px;
+  font-size: 27px; */
+  ${font({ weight: 400, Fmax: 27, Fmin: 20 })}
 `;
 
 const Name = styled.h2`
-  font-family: "Josefin Sans", sans-serif;
+  ${font({
+    family: "'Josefin Sans', sans-serif",
+    weight: 700,
+    Fmax: 50,
+    Fmin: 36,
+  })}
+  /* font-family: 'Josefin Sans', sans-serif;
   font-weight: 700px;
-  font-size: 50px;
+  font-size: 50px; */
   letter-spacing: 0.05em;
   margin: 10px 0;
 
   span {
     position: relative;
     z-index: 0;
+    white-space: nowrap;
+
     &::before {
       content: "";
       display: inline-block;
@@ -78,6 +103,10 @@ const Name = styled.h2`
       bottom: 0;
       z-index: -1;
     }
+  }
+
+  @media ${Theme.media.mobile} {
+    margin: 15px 0 22px;
   }
 `;
 

@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <a
       onClick={() => {
-        scroll.scrollToTop;
+        scroll.scrollToTop();
       }}
     >
       <Icon iconId={"code"} />

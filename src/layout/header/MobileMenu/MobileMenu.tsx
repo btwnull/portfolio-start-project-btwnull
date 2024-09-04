@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Theme } from "../../../styles/Theme";
 import { items } from "../headerMenu/HeaderMenu";
+import { Link } from "react-scroll";
 
 export const MobileMenu = () => {
   const [menuIsOpen, setmenuIsOpen] = useState(false);
@@ -24,7 +25,13 @@ export const MobileMenu = () => {
           {items.map((item, index) => {
             return (
               <ListItem key={index}>
-                <Link href={`#${item.href}`}>
+                <NavLink
+                  to={item.href}
+                  smooth={true}
+                  activeClass="active"
+                  spy={true}
+                  offset={-20}
+                >
                   {item.title}
                   <Mask>
                     <span>{item.title}</span>
@@ -32,7 +39,7 @@ export const MobileMenu = () => {
                   <Mask>
                     <span>{item.title}</span>
                   </Mask>
-                </Link>
+                </NavLink>
               </ListItem>
             );
           })}
@@ -134,12 +141,8 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   }
 `;
 
-const Link = styled.a`
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 400px;
-  font-size: 30px;
-  text-align: center;
-  color: transparent;
+const ListItem = styled.li`
+  position: relative;
 `;
 
 const Mask = styled.span`
@@ -151,24 +154,28 @@ const Mask = styled.span`
   overflow-y: hidden;
   /* outline: 1px solid red; */
   color: ${Theme.colors.accent};
-  :nth-child(0n + 1) {
-    top: 50%;
-    span {
-      display: inline-block;
-      transform: translateY(-50%);
-    }
-  }
-  /* & + & {
+  /* :nth-child(0n + 1) {
     top: 50%;
     span {
       display: inline-block;
       transform: translateY(-50%);
     }
   } */
+  & + & {
+    top: 50%;
+    span {
+      display: inline-block;
+      transform: translateY(-50%);
+    }
+  }
 `;
 
-const ListItem = styled.li`
-  position: relative;
+const NavLink = styled(Link)`
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400px;
+  font-size: 30px;
+  text-align: center;
+  color: transparent;
 
   &::before {
     content: "";
@@ -185,7 +192,8 @@ const ListItem = styled.li`
     transform: scale(0);
   }
 
-  &:hover {
+  &:hover,
+  &.active {
     &::before {
       transform: scale(1);
     }
@@ -193,7 +201,7 @@ const ListItem = styled.li`
     ${Mask} {
       transform: skewX(12deg) translateX(5px);
       color: ${Theme.colors.font};
-      ${Mask}:nth-child(0n+2) {
+      & + ${Mask} {
         transform: skewX(12deg) translateX(-5px);
       }
     }

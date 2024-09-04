@@ -40,6 +40,7 @@ export const HeaderMenu = () => {
                 smooth={true}
                 activeClass="active"
                 spy={true}
+                offset={-20}
               >
                 {item.title}
                 <Mask>
@@ -81,20 +82,20 @@ const Mask = styled.span`
   overflow-y: hidden;
   /* outline: 1px solid red; */
   color: ${Theme.colors.accent};
-  :nth-child(0n + 1) {
-    top: 50%;
-    span {
-      display: inline-block;
-      transform: translateY(-50%);
-    }
-  }
-  /* & + & {
+  /* :nth-child(0n + 1) {
     top: 50%;
     span {
       display: inline-block;
       transform: translateY(-50%);
     }
   } */
+  & + & {
+    top: 50%;
+    span {
+      display: inline-block;
+      transform: translateY(-50%);
+    }
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -119,7 +120,8 @@ const NavLink = styled(Link)`
     transform: scale(0);
   }
 
-  &:hover &.active {
+  &:hover,
+  &.active {
     &::before {
       transform: scale(1);
     }
@@ -127,7 +129,7 @@ const NavLink = styled(Link)`
     ${Mask} {
       transform: skewX(12deg) translateX(5px);
       color: ${Theme.colors.font};
-      ${Mask}:nth-child(0n+2) {
+      & + ${Mask} {
         transform: skewX(12deg) translateX(-5px);
       }
     }

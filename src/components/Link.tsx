@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Theme } from "../styles/Theme";
 
-export const TabLink = styled.a`
+export const TabLink = styled.a<{ active?: boolean }>`
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 1px;
@@ -27,5 +27,11 @@ export const TabLink = styled.a`
     left: 0;
     right: 0;
     z-index: -1;
+
+    ${(props) =>
+      props.active === true &&
+      css<{ active?: boolean }>`
+        height: 10px;
+      `}
   }
 `;

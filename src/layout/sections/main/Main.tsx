@@ -88,6 +88,10 @@ const Name = styled.h2`
   letter-spacing: 0.05em;
   margin: 10px 0;
 
+  @media ${Theme.media.mobile} {
+    margin: 15px 0 22px;
+  }
+
   span {
     position: relative;
     z-index: 0;
@@ -104,13 +108,11 @@ const Name = styled.h2`
       z-index: -1;
     }
   }
-
-  @media ${Theme.media.mobile} {
-    margin: 15px 0 22px;
-  }
 `;
 
 const SmallText = styled.span`
   font-weight: 400px;
   font-size: 14px;
+  display: inline-block;
+  margin-top: 50px;
 `;

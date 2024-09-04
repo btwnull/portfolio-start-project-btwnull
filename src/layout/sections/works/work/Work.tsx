@@ -5,12 +5,13 @@ import { Theme } from "../../../../styles/Theme";
 import { Button } from "../../../../components/Button";
 
 type WorkPropsType = {
-  title: string;
-  text: string;
-  src: string;
+  title?: string;
+  text?: string;
+  src?: string;
+  type?: string;
 };
 
-export const Work = (props: WorkPropsType) => {
+export const Work: React.FC<WorkPropsType> = (props: WorkPropsType) => {
   return (
     <StyledWork>
       <ImageWrapper>
@@ -20,7 +21,9 @@ export const Work = (props: WorkPropsType) => {
       <Description>
         <Title>{props.title}</Title>
         <Text>{props.text}</Text>
-        <TabLink href={"#"}>demo</TabLink>
+        <TabLink active href={"#"}>
+          demo
+        </TabLink>
         <TabLink href={"#"}>code</TabLink>
       </Description>
     </StyledWork>

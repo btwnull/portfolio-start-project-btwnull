@@ -1,68 +1,46 @@
 import React from "react";
-import styled from "styled-components";
-import { FlexWrapper } from "../FlexWrapper";
-import { Theme } from "../../styles/Theme";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+import "./../../styles/slider.css";
+import { StyledSlider, Text, Name, StyledSlide } from "./StyledSlider";
 
-export const Slider = () => {
+type SlidePropsType = {
+  text: string;
+  userName: string;
+};
+
+const Slide = (props: SlidePropsType) => {
   return (
-    <StyledSlider>
-      <FlexWrapper>
-        <Slide>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </Text>
-          <Name>@ivan ivanov</Name>
-        </Slide>
-      </FlexWrapper>
-      <Pagination>
-        <span></span>
-        <span className={"active"}></span>
-        <span></span>
-      </Pagination>
-    </StyledSlider>
+    <StyledSlide>
+      <Text>{props.text}</Text>
+      <Name>@{props.userName}</Name>
+    </StyledSlide>
   );
 };
 
-const StyledSlider = styled.div`
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Slide = styled.div`
-  text-align: center;
-`;
-
-const Text = styled.p``;
-
-const Name = styled.span`
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin: 22px 0 42px;
-  display: inline-block;
-`;
-
-const Pagination = styled.div`
-  span {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-
-    & + span {
-      margin-left: 5px;
+const items = [
+  <Slide
+    userName={"ivan ivanov"}
+    text={
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsu dolor sit amet, consectetur adipisicing elit."
     }
-
-    &.active {
-      background-color: ${Theme.colors.accent};
-      width: 20px;
+  />,
+  <Slide
+    userName={"piotr petrov"}
+    text={
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     }
-  }
-`;
+  />,
+  <Slide
+    userName={"igor igover"}
+    text={
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    }
+  />,
+];
+
+export const Slider = () => (
+  <StyledSlider>
+    <AliceCarousel disableButtonsControls mouseTracking items={items} />
+  </StyledSlider>
+);

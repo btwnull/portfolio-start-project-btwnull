@@ -61,6 +61,7 @@ export const Footer = () => {
 const StyledFooter = styled.footer`
   background-color: ${Theme.colors.primaryBg};
   padding: 40px 0 40px;
+  position: relative;
 `;
 
 const Name = styled.span`

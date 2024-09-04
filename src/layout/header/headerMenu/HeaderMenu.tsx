@@ -2,20 +2,45 @@ import React from "react";
 import styled from "styled-components";
 import { Theme } from "../../../styles/Theme";
 
-export const HeaderMenu = (props: { menuItems: Array<string> }) => {
+// export const items = ["Home", "Skills", "Works", "Testimony", "Contact"];
+export const items = [
+  {
+    title: "Home",
+    href: "home",
+  },
+
+  {
+    title: "Skills",
+    href: "skills",
+  },
+  {
+    title: "Works",
+    href: "works",
+  },
+  {
+    title: "Testimony",
+    href: "testimony",
+  },
+  {
+    title: "Contact",
+    href: "contact",
+  },
+];
+
+export const HeaderMenu = () => {
   return (
     <StyledHeaderMenu>
       <ul>
-        {props.menuItems.map((item, index) => {
+        {items.map((item, index) => {
           return (
             <ListItem key={index}>
-              <Link href="">
-                {item}
+              <Link href={`#${item.href}`}>
+                {item.title}
                 <Mask>
-                  <span>{item}</span>
+                  <span>{item.title}</span>
                 </Mask>
                 <Mask>
-                  <span>{item}</span>
+                  <span>{item.title}</span>
                 </Mask>
               </Link>
             </ListItem>

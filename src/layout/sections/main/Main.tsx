@@ -5,9 +5,12 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { Theme } from "../../../styles/Theme";
 import { font } from "../../../styles/Common";
+import Typewriter from "typewriter-effect";
+import Tilt from "react-parallax-tilt";
+
 export const Main = () => {
   return (
-    <StyledMain>
+    <StyledMain id={"home"}>
       <Container>
         <FlexWrapper align={"center"} justify={"space-around"} wrap={"wrap"}>
           <div>
@@ -15,11 +18,26 @@ export const Main = () => {
             <Name>
               I am <span>Ivan Sobenin</span>
             </Name>
-            <MainTitle>A Web Developer</MainTitle>
+            <MainTitle>
+              <p>A Web Developer</p>
+              <Typewriter
+                options={{
+                  strings: [
+                    "A Web Developer",
+                    "A Frontend Developer",
+                    "A Web Designer",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </MainTitle>
           </div>
-          <PhotoWrapper>
-            <Photo src={photo} alt="" />
-          </PhotoWrapper>
+          <Tilt>
+            <PhotoWrapper>
+              <Photo src={photo} alt="" />
+            </PhotoWrapper>
+          </Tilt>
         </FlexWrapper>
       </Container>
     </StyledMain>
@@ -73,6 +91,10 @@ const MainTitle = styled.h1`
   /* font-weight: 400px;
   font-size: 27px; */
   ${font({ weight: 400, Fmax: 27, Fmin: 20 })}
+
+  p {
+    display: none;
+  }
 `;
 
 const Name = styled.h2`

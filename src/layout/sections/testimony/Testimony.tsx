@@ -9,7 +9,7 @@ import { Container } from "../../../components/Container";
 
 export const Testimony = () => {
   return (
-    <StyledTestimony>
+    <StyledTestimony id={"testimony"}>
       <Container>
         <SectionTitle>Testimony</SectionTitle>
         <FlexWrapper direction={"column"} align={"center"}>
@@ -26,6 +26,7 @@ export const Testimony = () => {
 const StyledTestimony = styled.section`
   background-color: #ffdd00;
   min-height: 50vh;
+  position: relative;
 
   ${IconWrapper} {
     margin: 40px 0 72px;

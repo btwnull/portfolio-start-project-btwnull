@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Theme } from "../../../styles/Theme";
+import { items } from "../headerMenu/HeaderMenu";
 
-export const MobileMenu = (props: { menuItems: Array<string> }) => {
+export const MobileMenu = () => {
   const [menuIsOpen, setmenuIsOpen] = useState(false);
   const onBurgerBtnClick = () => {
     setmenuIsOpen(!menuIsOpen);
@@ -20,16 +21,16 @@ export const MobileMenu = (props: { menuItems: Array<string> }) => {
         }}
       >
         <ul>
-          {props.menuItems.map((item, index) => {
+          {items.map((item, index) => {
             return (
               <ListItem key={index}>
-                <Link href="">
-                  {item}
+                <Link href={`#${item.href}`}>
+                  {item.title}
                   <Mask>
-                    <span>{item}</span>
+                    <span>{item.title}</span>
                   </Mask>
                   <Mask>
-                    <span>{item}</span>
+                    <span>{item.title}</span>
                   </Mask>
                 </Link>
               </ListItem>

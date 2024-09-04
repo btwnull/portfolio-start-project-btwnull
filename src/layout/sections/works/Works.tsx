@@ -68,7 +68,7 @@ export const Works: React.FC = () => {
   }
 
   return (
-    <StyledWorks>
+    <StyledWorks id={"work"}>
       <Container>
         <SectionTitle>My Works</SectionTitle>
 
@@ -108,6 +108,7 @@ export const Works: React.FC = () => {
 };
 
 const StyledWorks = styled.section`
+  position: relative;
   ${FlexWrapper} {
     gap: 30px;
   }

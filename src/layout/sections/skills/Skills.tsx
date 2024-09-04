@@ -7,7 +7,7 @@ import { Container } from "../../../components/Container";
 
 export const Skills = () => {
   return (
-    <StyledSkills>
+    <StyledSkills id={"skills"}>
       <Container>
         <SectionTitle>My Skills</SectionTitle>
         <FlexWrapper wrap={"wrap"} justify={"space-between"}>
@@ -59,4 +59,6 @@ export const Skills = () => {
   );
 };
 
-const StyledSkills = styled.section``;
+const StyledSkills = styled.section`
+  position: relative;
+`;

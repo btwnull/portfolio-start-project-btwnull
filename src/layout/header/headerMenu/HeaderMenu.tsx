@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Theme } from "../../../styles/Theme";
+import { Link } from "react-scroll";
 
 // export const items = ["Home", "Skills", "Works", "Testimony", "Contact"];
 export const items = [
@@ -34,7 +35,12 @@ export const HeaderMenu = () => {
         {items.map((item, index) => {
           return (
             <ListItem key={index}>
-              <Link href={`#${item.href}`}>
+              <NavLink
+                to={item.href}
+                smooth={true}
+                activeClass="active"
+                spy={true}
+              >
                 {item.title}
                 <Mask>
                   <span>{item.title}</span>
@@ -42,7 +48,7 @@ export const HeaderMenu = () => {
                 <Mask>
                   <span>{item.title}</span>
                 </Mask>
-              </Link>
+              </NavLink>
             </ListItem>
           );
         })}
@@ -62,12 +68,8 @@ const StyledHeaderMenu = styled.nav`
   }
 `;
 
-const Link = styled.a`
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 400px;
-  font-size: 30px;
-  text-align: center;
-  color: transparent;
+const ListItem = styled.li`
+  position: relative;
 `;
 
 const Mask = styled.span`
@@ -95,8 +97,12 @@ const Mask = styled.span`
   } */
 `;
 
-const ListItem = styled.li`
-  position: relative;
+const NavLink = styled(Link)`
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400px;
+  font-size: 30px;
+  text-align: center;
+  color: transparent;
 
   &::before {
     content: "";
@@ -113,7 +119,7 @@ const ListItem = styled.li`
     transform: scale(0);
   }
 
-  &:hover {
+  &:hover &.active {
     &::before {
       transform: scale(1);
     }

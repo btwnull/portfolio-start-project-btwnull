@@ -68,7 +68,7 @@ export const Works: React.FC = () => {
   }
 
   return (
-    <StyledWorks id={"work"}>
+    <StyledWorks id={"works"}>
       <Container>
         <SectionTitle>My Works</SectionTitle>
 

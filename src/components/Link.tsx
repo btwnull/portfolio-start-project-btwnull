@@ -27,11 +27,13 @@ export const TabLink = styled.a<{ active?: boolean }>`
     left: 0;
     right: 0;
     z-index: -1;
+    height: 0;
+    transition: ${Theme.animations.transition};
 
     ${(props) =>
       props.active === true &&
       css<{ active?: boolean }>`
         height: 10px;
-      `}
+      `};
   }
 `;

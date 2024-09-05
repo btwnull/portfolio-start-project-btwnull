@@ -82,6 +82,7 @@ const Mask = styled.span`
   overflow-y: hidden;
   /* outline: 1px solid red; */
   color: ${Theme.colors.accent};
+  transition: ${Theme.animations.transition};
   /* :nth-child(0n + 1) {
     top: 50%;
     span {
@@ -118,6 +119,8 @@ const NavLink = styled(Link)`
     z-index: 1;
 
     transform: scale(0);
+
+    transition: ${Theme.animations.transition};
   }
 
   &:hover,

@@ -65,23 +65,30 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   bottom: 0;
   z-index: 99999;
   background-color: rgba(31, 31, 32, 0.9);
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 0.8s ease-in-out;
+
+  ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.8s ease-in-out;
+  }
 
   ${(props) =>
     props.isOpen &&
     css<{ isOpen: boolean }>`
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `}
+      transform: translateY(0);
 
-  ul {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
+      & ul {
+        gap: 30px;
+      }
+    `}
 `;
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`

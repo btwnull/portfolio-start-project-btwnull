@@ -14,9 +14,9 @@ export const Footer = () => {
           <SocialItem>
             <SocialLink>
               <Icon
-                width={"21px"}
-                height={"21px"}
-                viewBox={"0 0 21px 21px"}
+                width={"21"}
+                height={"21"}
+                viewBox={"0 0 21 21"}
                 iconId={"instagram"}
               />
             </SocialLink>
@@ -24,9 +24,9 @@ export const Footer = () => {
           <SocialItem>
             <SocialLink>
               <Icon
-                width={"21px"}
-                height={"21px"}
-                viewBox={"0 0 21px 21px"}
+                width={"21"}
+                height={"21"}
+                viewBox={"0 0 21 21"}
                 iconId={"telegram"}
               />
             </SocialLink>
@@ -34,9 +34,9 @@ export const Footer = () => {
           <SocialItem>
             <SocialLink>
               <Icon
-                width={"21px"}
-                height={"21px"}
-                viewBox={"0 0 21px 21px"}
+                width={"21"}
+                height={"21"}
+                viewBox={"0 0 21 21"}
                 iconId={"vk-logo"}
               />
             </SocialLink>
@@ -44,9 +44,9 @@ export const Footer = () => {
           <SocialItem>
             <SocialLink>
               <Icon
-                width={"21px"}
-                height={"21px"}
-                viewBox={"0 0 21px 21px"}
+                width={"21"}
+                height={"21"}
+                viewBox={"0 0 21 21"}
                 iconId={"linkedin"}
               />
             </SocialLink>
@@ -90,7 +90,7 @@ const SocialLink = styled.a`
   background-color: rgba(255, 255, 255, 0.1);
   width: 35px;
   height: 35px;
-
+  transition: ${Theme.animations.transition};
   display: flex;
   justify-content: center;
   align-items: center;

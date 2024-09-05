@@ -9,6 +9,7 @@ import { Contacts } from "./layout/sections/contacts/Contacts";
 import { Slogan } from "./layout/sections/slogan/Slogan";
 import { Footer } from "./layout/footer/Footer";
 import { ParticleReact } from "./components/particleReact/ParticleReact";
+import { ButtonBackToTop } from "./components/ButtonBackToTop";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Contacts />
       <Slogan />
       <Footer />
+      <ButtonBackToTop />
     </div>
   );
 }

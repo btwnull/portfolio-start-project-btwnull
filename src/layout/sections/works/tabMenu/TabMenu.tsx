@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { TabLink } from "../../../../components/Link";
+import { Theme } from "../../../../styles/Theme";
 
 export type TabsStatusType = "all" | "landing" | "react" | "spa";
 

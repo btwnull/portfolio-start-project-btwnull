@@ -4,6 +4,7 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
+import { Fade } from "react-awesome-reveal";
 
 export const Skills = () => {
   return (
@@ -11,48 +12,50 @@ export const Skills = () => {
       <Container>
         <SectionTitle>My Skills</SectionTitle>
         <FlexWrapper wrap={"wrap"} justify={"space-between"}>
-          <Skill
-            iconId={"code"}
-            title={"html5"}
-            description={
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-            }
-          />
-          <Skill
-            iconId={"css"}
-            title={"css3"}
-            description={
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-            }
-          />
-          <Skill
-            iconId={"react"}
-            title={"React"}
-            description={
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-            }
-          />
-          <Skill
-            iconId={"typeScript"}
-            title={"typescript"}
-            description={
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-            }
-          />
-          <Skill
-            iconId={"styledComponents"}
-            title={"styled components"}
-            description={
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-            }
-          />
-          <Skill
-            iconId={"figma"}
-            title={"web design"}
-            description={
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
-            }
-          />
+          <Fade cascade={true} damping={0.2}>
+            <Skill
+              iconId={"code"}
+              title={"html5"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+              }
+            />
+            <Skill
+              iconId={"css"}
+              title={"css3"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+              }
+            />
+            <Skill
+              iconId={"react"}
+              title={"React"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+              }
+            />
+            <Skill
+              iconId={"typeScript"}
+              title={"typescript"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+              }
+            />
+            <Skill
+              iconId={"styledComponents"}
+              title={"styled components"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+              }
+            />
+            <Skill
+              iconId={"figma"}
+              title={"web design"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+              }
+            />
+          </Fade>
         </FlexWrapper>
       </Container>
     </StyledSkills>

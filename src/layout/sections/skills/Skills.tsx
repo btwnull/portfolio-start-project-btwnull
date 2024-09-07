@@ -5,6 +5,7 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
 import { Fade } from "react-awesome-reveal";
+import { Theme } from "../../../styles/Theme";
 
 export const Skills = () => {
   return (

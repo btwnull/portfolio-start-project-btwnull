@@ -27,6 +27,9 @@ body {
     line-height: 1.2;
 
     min-width:360px;
+
+
+
   }
   a {
     text-decoration:none;

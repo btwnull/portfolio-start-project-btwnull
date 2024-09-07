@@ -18,6 +18,8 @@ export const Theme = {
     tablet: "screen and (max-width: 768px)",
     mobile: "screen and (max-width: 576px)",
     desktop: "screen and (min-width: 1140px)",
+    pointForSkills: "screen and (max-width: 789px)",
+    pointForWorks: "screen and (max-width: 859px)",
   },
 
   animations: {

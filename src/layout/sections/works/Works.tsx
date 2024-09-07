@@ -7,6 +7,8 @@ import socialImg from "./../../../assets/images/proj-1.png";
 import timerImg from "./../../../assets/images/proj-2.png";
 import { Container } from "../../../components/Container";
 import { TabMenu, TabsStatusType } from "./tabMenu/TabMenu";
+import { AnimatePresence, motion } from "framer-motion";
+import { Theme } from "../../../styles/Theme";
 
 // const tabItems = ["All", "landing page", "React", "spa"];
 
@@ -38,6 +40,7 @@ const worksData = [
     src: socialImg,
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
     type: "spa",
+    id: 1,
   },
 
   {
@@ -45,6 +48,37 @@ const worksData = [
     src: timerImg,
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim",
     type: "react",
+    id: 2,
+  },
+  {
+    title: "Social Network",
+    src: socialImg,
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    type: "spa",
+    id: 3,
+  },
+
+  {
+    title: "Timer",
+    src: timerImg,
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim",
+    type: "react",
+    id: 4,
+  },
+  {
+    title: "Social Network",
+    src: socialImg,
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    type: "spa",
+    id: 5,
+  },
+
+  {
+    title: "Timer",
+    src: timerImg,
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim",
+    type: "react",
+    id: 6,
   },
 ];
 
@@ -83,9 +117,23 @@ export const Works: React.FC = () => {
           align={"flex-start"}
           wrap={"wrap"}
         >
-          {filteredWorks.map((w) => {
-            return <Work title={w.title} src={w.src} text={w.text} />;
-          })}
+          <AnimatePresence>
+            {filteredWorks.map((w) => {
+              return (
+                <motion.div
+                  style={{ width: "400px", flexGrow: 1, maxWidth: "540px" }}
+                  layout={true}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  key={w.id}
+                >
+                  <Work title={w.title} src={w.src} text={w.text} key={w.id} />
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+
           {/* <Work
             src={socialImg}
             title={"Social Network"}
@@ -111,5 +159,9 @@ const StyledWorks = styled.section`
   position: relative;
   ${FlexWrapper} {
     gap: 30px;
+    @media ${Theme.media.pointForWorks} {
+      justify-content: center; // значение для медиазапроса
+      align-items: center; // значение для медиазапроса
+    }
   }
 `;

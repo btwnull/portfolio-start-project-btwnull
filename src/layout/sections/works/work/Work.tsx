@@ -32,8 +32,8 @@ export const Work: React.FC<WorkPropsType> = (props: WorkPropsType) => {
 
 const StyledWork = styled.div`
   background-color: ${Theme.colors.secondaryBg};
-  width: 330px;
-  flex-grow: 1;
+  /* width: 330px;
+  flex-grow: 1; */
 
   ${TabLink} {
     padding: 10px 0;
@@ -43,9 +43,9 @@ const StyledWork = styled.div`
     }
   }
 
-  @media ${Theme.media.desktop} {
+  /* @media ${Theme.media.desktop} {
     max-width: 540px;
-  }
+  } */
 `;
 
 const ImageWrapper = styled.div`

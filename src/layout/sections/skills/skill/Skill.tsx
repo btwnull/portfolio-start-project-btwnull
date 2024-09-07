@@ -32,6 +32,12 @@ const StyledSkill = styled.div`
   @media ${Theme.media.mobile} {
     padding: 62px 0 40px;
   }
+  @media ${Theme.media.pointForSkills} {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: auto;
+  }
 `;
 
 const SkillTitle = styled.h3`
